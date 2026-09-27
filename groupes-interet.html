@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Version 4 -->
 <title>Groupes d’intérêt · DAE — Site-77</title>
 <meta name="description" content="Département des Affaires Externes — Site-77, Fondation SCP. Base de documentation interne : charte, protocoles, organigramme et groupes d'intérêt.">
 <link rel="icon" href="assets/img/logo-site77.png">
@@ -20,7 +21,7 @@
       </div>
     </div>
     <div class="letterhead-status">
-      Statut département : <strong>Actif</strong><br>
+      Statut département : <span class="status-dot"></span><strong>Actif</strong><br>
       Direction : <strong>Aaron</strong>
     </div>
   </div>
@@ -36,6 +37,8 @@
 <a href="groupes-interet.html" class="active">Groupes d’intérêt</a>
 <a href="planning.html" class="">Planning</a>
 
+    <a href="conditions.html" class="">Termes &amp; CGU</a>
+
     <a href="https://aaronthoue-commits.github.io/dae-site-recrutementfinal/" class="cta" target="_blank" rel="noopener">Candidater</a>
   </div>
 </nav>
@@ -49,36 +52,48 @@
 
 <p class="page-kicker">Base de données externe</p>
 <h1 class="page-title">Groupes d’intérêt</h1>
-<p class="lede">Les Groupes d’Intérêt constituent l’ensemble des organisations extérieures susceptibles d’interagir avec la Fondation. Toute relation avec un Groupe d’Intérêt doit être évaluée selon la situation.</p>
+<p class="lede">Les Groupes d’Intérêt constituent l’ensemble des organisations extérieures susceptibles d’int
+eragir avec la Fondation. Toute relation avec un Groupe d’Intérêt doit être évaluée selon la situa
+tion.</p>
+
+<div class="filter-bar">
+  <button class="filter-btn active" data-filter="tous" type="button">Tous</button>
+  <button class="filter-btn" data-filter="amical" type="button">Amical</button>
+  <button class="filter-btn" data-filter="neutre" type="button">Neutre</button>
+  <button class="filter-btn" data-filter="hostile" type="button">Hostile</button>
+  <button class="filter-btn" data-filter="mefiance" type="button">Méfiance</button>
+</div>
 
 <div class="grid grid-2">
   
-  <div class="gdi-card">
+  <div class="gdi-card" data-status="amical">
     <span class="status-pill status-amical">Amical</span>
     <h3>Gendrasterie Nationale</h3>
     <p>Force occulte française chargée de la protection de la population et du maintien de la normalité sur le territoire français.</p>
   </div>
-  <div class="gdi-card">
+  <div class="gdi-card" data-status="neutre">
     <span class="status-pill status-neutre">Neutre</span>
     <h3>Coalition Mondiale Occulte</h3>
     <p>Organisation internationale consacrée à la protection de l’humanité face aux menaces anormales, privilégiant généralement leur neutralisation.</p>
   </div>
-  <div class="gdi-card">
+  <div class="gdi-card" data-status="hostile">
     <span class="status-pill status-hostile">Hostile</span>
     <h3>Main du Serpent</h3>
     <p>Organisation opposée au contrôle de l’anormal et favorable à la libre circulation des individus, entités et connaissances anormales.</p>
   </div>
-  <div class="gdi-card">
+  <div class="gdi-card" data-status="hostile">
     <span class="status-pill status-hostile">Hostile</span>
     <h3>Insurrection du Chaos</h3>
     <p>Organisation issue de la Fondation et comptant parmi ses ennemis majeurs, utilisant notamment des anomalies et des ressources volées à ses propres fins.</p>
   </div>
-  <div class="gdi-card">
+  <div class="gdi-card" data-status="mefiance">
     <span class="status-pill status-mefiance">Méfiance</span>
     <h3>Front de Libération Anormal</h3>
-    <p>Organisation revendiquant la libération et la reconnaissance de l’anormal. Activités et objectifs exacts actuellement sous surveillance.</p>
+    <p>Organisation revendiquant la libération et la reconnaissance de l
+’anormal. Activités et objectifs exacts actuellement sous surveillance.</p>
   </div>
-  <div class="gdi-card">
+  <div class="
+gdi-card" data-status="mefiance">
     <span class="status-pill status-mefiance">Méfiance</span>
     <h3>France-Sud</h3>
     <p>Chaîne médiatique française. Ses activités et éventuels liens avec le monde anormal restent à déterminer.</p>
@@ -100,6 +115,7 @@
       <p><a href="charte.html">Charte du DAE</a></p>
       <p><a href="protocoles.html">Protocoles</a></p>
       <p><a href="groupes-interet.html">Groupes d’intérêt</a></p>
+      <p><a href="conditions.html">Termes d’utilisation &amp; CGU</a></p>
     </div>
     <div class="footer-col">
       <h4>Copyright</h4>
@@ -115,5 +131,6 @@
   </div>
 </footer>
 
+<script src="assets/js/site.js"></script>
 </body>
 </html>

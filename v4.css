@@ -1,0 +1,31 @@
+/* =========================================================
+   DAE — SITE-77 · V4 · Ajustements de navigation
+   ========================================================= */
+
+/* La barre d'onglets passe à la ligne au lieu de générer
+   une barre de défilement horizontale. */
+.tabs-inner{
+  flex-wrap: wrap;
+  row-gap: 4px;
+  padding: 6px 24px;
+  justify-content: center;
+  overflow-x: visible;
+}
+.tabs-inner a{
+  padding: 11px 13px;
+  font-size: 0.85rem;
+}
+.tabs-inner a.cta{
+  margin-left: 0;
+}
+
+/* Pages un peu plus larges */
+:root{
+  --page-max: 1120px;
+}
+
+/* Barre de défilement verticale discrète (Webkit) */
+::-webkit-scrollbar{ width: 10px; }
+::-webkit-scrollbar-track{ background: var(--paper); }
+::-webkit-scrollbar-thumb{ background: var(--line-strong); border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover{ background: var(--muted); }
