@@ -126,3 +126,9 @@ html.tt *{transition:background-color .45s,color .45s,border-color .45s!importan
 [data-theme=dark] #fq,[data-theme=dark] input:not([type=checkbox]),[data-theme=dark] select,[data-theme=dark] textarea{background:#110c0d;color:var(--i);border-color:#4a3f39}
 [data-theme=dark] th{background:#2a2122}[data-theme=dark] .hero:after{background:linear-gradient(transparent 50%,#141011 96%)}[data-theme=dark] .hero{background:#141011}
 [data-theme=dark] .card:before{background:radial-gradient(280px circle at var(--mx,50%) var(--my,50%),rgba(227,154,168,.12),transparent 70%)}
+
+.js .card.rv{clip-path:none;filter:none;opacity:0;transform:translateY(30px) scale(.98);transition:opacity .9s var(--d,0s),transform .9s var(--d,0s) cubic-bezier(.2,.7,.2,1)}
+.js .card.rv.in{clip-path:none;opacity:1;transform:none}
+#gl{display:flex;flex-direction:column}#gl h2{margin-top:34px}.g dt{font-size:18px}.g dd{margin-top:3px}
+#sg{background:var(--p);border:1px solid var(--r);padding:10px 14px}#sg button{font:inherit;color:var(--b);background:none;border:0;border-bottom:1px solid;cursor:pointer;padding:0}
+.src{font-size:14px;color:var(--m);margin-top:40px}

@@ -1,5 +1,5 @@
 (function(){
-var P=[["index","Accueil"],["charte","Charte du DAE"],["ethique","Charte Éthique"],["organigramme","Organigramme"],["protocoles","Protocoles"],["groupes-interet","Groupes d’intérêt"],["planning","Planning"],["faq","FAQ"],["conditions","Termes & CGU"]],
+var P=[["index","Accueil"],["charte","Charte du DAE"],["ethique","Charte Éthique"],["organigramme","Organigramme"],["protocoles","Protocoles"],["groupes-interet","Groupes d’intérêt"],["planning","Planning"],["glossaire","Glossaire"],["conditions","Termes & CGU"]],
 pg=document.body.dataset.page,h=document.getElementById("h"),f=document.getElementById("f"),L="";
 P.forEach(function(p){L+='<a href="'+p[0]+'.html"'+(p[0]==pg?' class="on"':"")+">"+p[1]+"</a>"});
 h.innerHTML='<div class="w"><a class="br" href="index.html"><img src="assets/img/logo-dae.png" alt="Logo du DAE"><span><b>Fondation SCP — Site-77</b><small>Département des Affaires Externes</small></span></a><div class="st">Statut département : <b>Actif</b><br>Direction : <b>Aaron</b></div></div>';
@@ -32,4 +32,7 @@ document.querySelectorAll(".rv,.sp").forEach(function(e){if(!e.closest(".hc"))io
 document.addEventListener("pointermove",function(e){var c=e.target.closest&&e.target.closest(".card");if(c){var r=c.getBoundingClientRect();c.style.setProperty("--mx",(e.clientX-r.left)+"px");c.style.setProperty("--my",(e.clientY-r.top)+"px")}},{passive:true});
 document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a");if(!a||calm||e.metaKey||e.ctrlKey||e.shiftKey||e.button||a.target||a.hasAttribute("download"))return;var u=new URL(a.href,location);if(u.origin!=location.origin||u.pathname==location.pathname||!/(\.html|\/)$/.test(u.pathname))return;e.preventDefault();document.body.classList.add("out");setTimeout(function(){location.href=u.href},260)});
 addEventListener("pageshow",function(e){if(e.persisted)document.body.classList.remove("out")});
+
+function sweep(){document.querySelectorAll(".rv:not(.in),.sp:not(.in)").forEach(function(e){var r=e.getBoundingClientRect();if(r.top<innerHeight&&r.bottom>0)e.classList.add("in")})}
+var sw;addEventListener("scroll",function(){clearTimeout(sw);sw=setTimeout(sweep,350)},{passive:true});setTimeout(sweep,1500);
 })();
