@@ -1,1 +1,3 @@
 window.DAE_WEBHOOK="https://discord.com/api/webhooks/1542136528560717834/RAbMqeFOpMkb5FiauLRk1ioAtdC3n7-4ytakty6GQ_EBZnQjSpicatwM5jo_G93G98IO";
+/* ID d’un rôle Discord à mentionner à chaque candidature (optionnel) */
+window.DAE_PING="";

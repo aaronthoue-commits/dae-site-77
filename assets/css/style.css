@@ -55,3 +55,32 @@ nav a{padding:21px 12px;font-size:16.5px}nav a.cta{padding:10px 18px;font-size:1
 .rl{border-left-width:5px}.warn{background:#f1e4d3;border:1px solid #d9b98f;padding:12px 16px;font-size:15px}
 .dl{display:flex;flex-wrap:wrap;gap:6px;margin:20px 0}
 #f .logo{width:56px;background:#fff;border-radius:8px;padding:2px;margin-bottom:10px}
+
+html{scroll-padding-top:150px}body{animation:fi .6s}@keyframes fi{from{opacity:0}}
+#top{position:sticky;top:0;z-index:9}nav{position:static}
+#h .w,.br img,.br b,nav a{transition:all .3s}.sm #h .w{padding:8px 20px}.sm .br img{width:44px;height:44px}.sm .br b{font-size:18px}.sm .br small{display:none}.sm nav a{padding-top:14px;padding-bottom:14px}
+nav a{position:relative;font-size:15.5px;padding:21px 10px;border-bottom:0!important}nav a:after{content:"";position:absolute;left:10px;right:10px;bottom:0;height:3px;background:var(--b);transform:scaleX(0);transition:transform .3s}nav a:hover:after,nav a.on:after{transform:scaleX(1)}nav a.cta:after{display:none}
+#pb{position:fixed;top:0;left:0;height:3px;background:#b8892b;z-index:20;width:0}
+#up{position:fixed;right:18px;bottom:18px;width:44px;height:44px;border-radius:50%;border:0;background:var(--b);color:#fff;font-size:20px;cursor:pointer;opacity:0;pointer-events:none;transform:translateY(12px);transition:.3s;z-index:8}#up.on{opacity:1;pointer-events:auto;transform:none}
+#th{background:none;border:1px solid #fff6;color:#fff;border-radius:50%;width:32px;height:32px;margin-left:10px;cursor:pointer;font-size:15px;transition:transform .4s}#th:hover{transform:rotate(180deg)}
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .7s var(--d,0s),transform .7s var(--d,0s)}.js .rv.in{opacity:1;transform:none}
+.card{transition:transform .25s,box-shadow .25s,background .25s}.card:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(74,13,22,.16)}
+.btn{transition:transform .2s,background .2s}.btn:hover{transform:translateY(-2px)}.ghost{background:transparent;border:1px solid #fff}.ghost:hover{background:#fff3}
+.hero{position:relative;background:#1a1817;overflow:hidden;height:min(84vh,820px)}
+.hero img{width:100%;height:100%;object-fit:contain;object-position:center top;animation:kb 24s ease-out both}@keyframes kb{from{transform:scale(1.14)}to{transform:scale(1)}}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 50%,#1a1817 96%)}
+.hc{position:absolute;left:0;right:0;bottom:0;margin:auto;padding-bottom:40px;color:#fff;z-index:2;animation:up 1.1s .3s both}@keyframes up{from{opacity:0;transform:translateY(30px)}}
+.hc .eyebrow{color:#e7c9b0;margin:0}.hc h1{margin:6px 0 12px;text-shadow:0 2px 14px #000}.hc .q{font-style:italic;font-size:19px;max-width:660px;margin:0 0 16px}
+.hc .btn:first-child{animation:pulse 2.6s infinite}@keyframes pulse{0%{box-shadow:0 0 0 0 #fff8}70%,100%{box-shadow:0 0 0 14px transparent}}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin:40px 0}.stat{text-align:center;padding:20px 10px;border:1px solid var(--r);background:var(--p)}.stat b{display:block;font-size:46px;line-height:1.1;color:var(--b)}
+.tree div+div:before{transform-origin:top;transform:scaleY(0);transition:transform .6s .3s}.tree div.in:before{transform:scaleY(1)}
+.dy.today{animation:glow 2.6s infinite}@keyframes glow{50%{box-shadow:0 0 0 7px rgba(110,19,32,.16)}}
+details[open] p{animation:dd .35s}@keyframes dd{from{opacity:0;transform:translateY(-8px)}}
+dl dt{font-weight:700;margin-top:14px}dl dd{margin:2px 0 0}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.js .rv{opacity:1;transform:none}}
+[data-theme=dark]{--c:#171312;--p:#211b19;--i:#eadfd2;--m:#b3a596;--r:#3a312c;--b:#a32a40}
+[data-theme=dark] a{color:#e8909f}[data-theme=dark] .br{color:#fff}[data-theme=dark] a.card{color:var(--i)}[data-theme=dark] .btn,[data-theme=dark] nav a.cta{color:#fff}
+[data-theme=dark] nav a{color:var(--m)}[data-theme=dark] nav a.on{color:#e8909f}[data-theme=dark] .eyebrow,[data-theme=dark] .stat b{color:#e8909f}
+[data-theme=dark] th{background:#2b2321}[data-theme=dark] a.card:hover,[data-theme=dark] .dy.today{background:#2a2220}
+[data-theme=dark] input:not([type=checkbox]),[data-theme=dark] select,[data-theme=dark] textarea{background:#1b1514;color:var(--i);border-color:#4a3f39}
+[data-theme=dark] .warn{background:#3a2a1c;border-color:#6b4a2a}
