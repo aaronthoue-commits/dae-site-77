@@ -1,0 +1,3 @@
+(function(){var lb=document.createElement("div");lb.id="lb";lb.innerHTML='<img alt="">';document.body.appendChild(lb);var im=lb.firstChild;
+document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest(".tn button");if(b){im.src=b.dataset.src;im.alt=b.querySelector("img").alt;lb.classList.add("on")}else lb.classList.remove("on")});
+document.addEventListener("keydown",function(e){if(e.key=="Escape")lb.classList.remove("on")})})();

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://aaronthoue-commits.github.io/dae-site-77/sitemap.xml

@@ -1,1 +1,0 @@
-(function(){var i=document.getElementById("fq"),n=document.getElementById("fn");i.oninput=function(){var v=i.value.toLowerCase().trim(),c=0;document.querySelectorAll("[data-k]").forEach(function(e){var ok=!v||e.textContent.toLowerCase().indexOf(v)>-1;e.hidden=!ok;if(ok)c++});n.textContent=v?c+" résultat(s)":""}})();

@@ -1,5 +1,5 @@
 (function(){
-var P=[["index","Accueil"],["charte","Charte du DAE"],["ethique","Charte Éthique"],["organigramme","Organigramme"],["protocoles","Protocoles"],["groupes-interet","Groupes d’intérêt"],["planning","Planning"],["glossaire","Glossaire"],["conditions","Termes & CGU"]],
+var P=[["index","Accueil"],["charte","Charte du DAE"],["ethique","Charte Éthique"],["organigramme","Organigramme"],["tenues","Tenues"],["protocoles","Protocoles"],["groupes-interet","Groupes d’intérêt"],["planning","Planning"],["glossaire","Glossaire"]],
 pg=document.body.dataset.page,h=document.getElementById("h"),f=document.getElementById("f"),L="";
 P.forEach(function(p){L+='<a href="'+p[0]+'.html"'+(p[0]==pg?' class="on"':"")+">"+p[1]+"</a>"});
 h.innerHTML='<div class="w"><a class="br" href="index.html"><img src="assets/img/logo-dae.png" alt="Logo du DAE"><span><b>Fondation SCP — Site-77</b><small>Département des Affaires Externes</small></span></a><div class="st">Statut département : <b>Actif</b><br>Direction : <b>Aaron</b></div></div>';
