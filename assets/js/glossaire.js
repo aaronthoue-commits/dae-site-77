@@ -22,4 +22,22 @@ n.textContent=ok.length?ok.length+" résultat(s)":"Aucun résultat";
 if(!ok.length||ok[0].s<60){var pv=ph(v),bt=null,bd=4;pool.forEach(function(it){var d=lev(pv,it.tf);if(d<bd){bd=d;bt=it}});
 if(bt&&bt.t!=v){sg.hidden=false;sg.textContent="Vouliez-vous dire : ";var b=document.createElement("button");b.type="button";b.textContent=bt.t;b.onclick=function(){q.value=bt.t;run()};sg.appendChild(b);sg.appendChild(document.createTextNode(" ?"))}}}
 ["Tout"].concat(H.map(function(h){return h.dataset.c})).forEach(function(c,i){var b=document.createElement("button");b.type="button";b.textContent=c;if(!i)b.className="on";b.onclick=function(){cat=i?c:"";[].forEach.call(ch.children,function(x){x.classList.toggle("on",x===b)});run()};ch.appendChild(b)});
+function sl(s){return nz(s).replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")}
+I.forEach(function(it){it.e.id=sl(it.t);it.dE=it.e.querySelector("dt");it.dd=it.e.querySelector("dd");it.t0=it.dE.textContent;it.d0=it.dd.textContent;it.dE.title="Copier le lien de ce terme"});
+[].forEach.call(ch.children,function(b,i){var c=i?H[i-1].dataset.c:"";b.textContent+=" · "+(i?I.filter(function(x){return x.c==c}).length:I.length)});
+var tt=document.createElement("div");tt.id="toast";document.body.appendChild(tt);var tm;
+function toast(t){tt.textContent=t;tt.classList.add("on");clearTimeout(tm);tm=setTimeout(function(){tt.classList.remove("on")},1800)}
+function flash(g){g.classList.remove("flash");void g.offsetWidth;g.classList.add("flash")}
+C.addEventListener("click",function(e){var d=e.target.closest("dt");if(!d)return;var g=d.parentNode;history.replaceState(null,"","#"+g.id);try{navigator.clipboard.writeText(location.href)}catch(x){}toast("Lien copié");flash(g)});
+function hl(el,txt,Q){var n=nz(txt),sp=[];Q.forEach(function(w){var i=0;while((i=n.indexOf(w,i))>-1){sp.push([i,i+w.length]);i+=w.length}});
+if(!sp.length){if(el.querySelector("mark"))el.textContent=txt;return}sp.sort(function(a,b){return a[0]-b[0]});var mg=[sp[0]];sp.slice(1).forEach(function(s){var l=mg[mg.length-1];if(s[0]<=l[1])l[1]=Math.max(l[1],s[1]);else mg.push(s)});
+var f=document.createDocumentFragment(),p=0;mg.forEach(function(s){f.appendChild(document.createTextNode(txt.slice(p,s[0])));var m=document.createElement("mark");m.textContent=txt.slice(s[0],s[1]);f.appendChild(m);p=s[1]});f.appendChild(document.createTextNode(txt.slice(p)));el.textContent="";el.appendChild(f)}
+var run0=run;run=function(){run0();var Q=tk(q.value.trim()).filter(function(w){return SW.indexOf(w)<0});
+I.forEach(function(it){if(Q.length&&!it.e.hidden){hl(it.dE,it.t0,Q);hl(it.dd,it.d0,Q);it.e.style.setProperty("--k",+it.e.style.order||0);it.e.classList.remove("pop");void it.e.offsetWidth;it.e.classList.add("pop")}else{if(it.dE.querySelector("mark"))it.dE.textContent=it.t0;if(it.dd.querySelector("mark"))it.dd.textContent=it.d0;it.e.classList.remove("pop")}})};
+var tb=document.createElement("div");tb.className="td";q.parentNode.insertBefore(tb,q);
+function pickT(i,r){var it=I[i],s=document.createElement("small"),b=document.createElement("b"),p=document.createElement("p"),bt=document.createElement("button");tb.textContent="";s.textContent=r?"Terme au hasard":"Terme du jour";b.textContent=it.t;p.textContent=it.d0;bt.type="button";bt.className="btn alt";bt.textContent="Un autre terme";bt.onclick=function(){pickT(Math.floor(Math.random()*I.length),1)};tb.appendChild(s);tb.appendChild(b);tb.appendChild(p);tb.appendChild(bt);tb.classList.remove("pop");void tb.offsetWidth;tb.classList.add("pop")}
+var dd=new Date();pickT((dd.getFullYear()*372+dd.getMonth()*31+dd.getDate())%I.length,0);
+document.addEventListener("keydown",function(e){if(e.key=="/"&&document.activeElement!=q&&!/INPUT|TEXTAREA/.test(document.activeElement.tagName)){e.preventDefault();q.focus()}else if(e.key=="Escape"&&document.activeElement==q){q.value="";run()}});
+q.placeholder="Rechercher un mot… (touche / pour y accéder, les fautes sont tolérées)";
+if(location.hash){var gg=document.getElementById(decodeURIComponent(location.hash.slice(1)));if(gg)setTimeout(function(){gg.scrollIntoView({block:"center"});flash(gg)},500)}
 q.oninput=run;run()})();
